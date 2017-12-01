@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\tests\AllTests.cpp" />
+    <ClCompile Include="..\tests\ExampleTest.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{2285f8db-156a-4019-8de2-c5d81a7f6fe4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{757b38a7-bd62-4c05-9686-7ef5b8f24525}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
