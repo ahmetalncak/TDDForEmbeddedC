@@ -47,3 +47,6 @@ Debug
 *.db
 *.opendb
 *.suo
+/.vs
+/vs-test-build/.vs/TDDForEmbeddedC/v15/ipch/AutoPCH/5ab8b1c4368f20fa
+/vs-test-build/.vs/TDDForEmbeddedC/v15
