@@ -12,5 +12,13 @@
     <ClCompile Include="..\src\Example.c">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\LedDriver.c">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\LedDriver.h">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -134,6 +134,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\LedDriverTest.cpp" />
     <ClCompile Include="..\tests\AllTests.cpp" />
     <ClCompile Include="..\tests\ExampleTest.cpp" />
   </ItemGroup>

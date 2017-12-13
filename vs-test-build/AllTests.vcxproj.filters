@@ -5,6 +5,9 @@
     <ClCompile Include="..\tests\ExampleTest.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\LedDriverTest.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">

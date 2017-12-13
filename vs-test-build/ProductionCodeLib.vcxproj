@@ -110,6 +110,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Example.c" />
+    <ClCompile Include="..\src\LedDriver.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\LedDriver.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
