@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="..\tests\AllTests.cpp" />
-    <ClCompile Include="..\tests\ExampleTest.cpp">
+    <ClCompile Include="..\tests\LedDriverTEST\LedDriverTest.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -13,5 +13,13 @@
     <Filter Include="inc">
       <UniqueIdentifier>{757b38a7-bd62-4c05-9686-7ef5b8f24525}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\LedDriver\LedDriver.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mocks\RuntimeErrorStub.h">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

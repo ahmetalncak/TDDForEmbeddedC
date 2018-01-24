@@ -9,7 +9,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Example.c">
+    <ClInclude Include="..\include\LedDriver\LedDriver.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mocks\RuntimeErrorStub.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\util\RuntimeError.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\LedDriver\LedDriver.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mocks\RuntimeErrorStub.c">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

@@ -10,6 +10,15 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\LedDriver\LedDriver.h" />
+    <ClInclude Include="..\include\util\RuntimeError.h" />
+    <ClInclude Include="..\mocks\RuntimeErrorStub.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\mocks\RuntimeErrorStub.c" />
+    <ClCompile Include="..\src\LedDriver\LedDriver.c" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B91444F6-1620-4836-8BDE-05A795A7E772}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
@@ -50,7 +59,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\lib\include;..\lib\include\Platforms\VisualCpp;..\include;..\tests;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\lib\include;..\lib\include\Platforms\VisualCpp;..\mocks;..\include\util;..\include;..\tests;..\include\LedDriver;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -108,9 +117,6 @@
       <OutputFile>.\Release/ProductionCodeLib.bsc</OutputFile>
     </Bscmake>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\src\Example.c" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
