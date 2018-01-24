@@ -14,4 +14,12 @@
       <UniqueIdentifier>{757b38a7-bd62-4c05-9686-7ef5b8f24525}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\LedDriver\LedDriver.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mocks\RuntimeErrorStub.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

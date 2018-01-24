@@ -3,6 +3,7 @@
 extern "C"
 {
 #include "LedDriver.h"
+#include "RuntimeErrorStub.h"
 }
 
 static uint16_t virtualLeds;
@@ -92,6 +93,15 @@ TEST(LedDriver, OutOfBoundsChangesNothing)
 	LedDriver_TurnOn(3141);
 
 	CHECK_EQUAL(0, virtualLeds);
+}
+
+IGNORE_TEST(LedDriver, OutOfBoundsProducesRuntimeError)
+{
+	LedDriver_TurnOn(-1);
+	STRCMP_EQUAL("LED Driver: out-of-bounds LED",
+		RuntimeErrorStub_GetLastError());
+	CHECK_EQUAL(-1, RuntimeErrorStub_GetLastParameter());
 
 }
+
 

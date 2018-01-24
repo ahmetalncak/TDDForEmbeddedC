@@ -12,8 +12,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\LedDriver\LedDriver.h" />
+    <ClInclude Include="..\include\util\RuntimeError.h" />
+    <ClInclude Include="..\mocks\RuntimeErrorStub.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\mocks\RuntimeErrorStub.c" />
     <ClCompile Include="..\src\LedDriver\LedDriver.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -56,7 +59,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\lib\include;..\lib\include\Platforms\VisualCpp;..\include;..\tests;..\include\LedDriver;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\lib\include;..\lib\include\Platforms\VisualCpp;..\mocks;..\include\util;..\include;..\tests;..\include\LedDriver;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
