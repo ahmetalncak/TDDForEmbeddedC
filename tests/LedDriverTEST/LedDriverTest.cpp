@@ -73,6 +73,17 @@ TEST(LedDriver, UpperAndLowerBounds)
 	CHECK_EQUAL(0x8001, virtualLeds);
 }
 
+TEST(LedDriver, OutOfBoundsTurnOffDoesNoHarm)
+{
+	LedDriver_TurnAllOn();
+	LedDriver_TurnOff(-1);
+	LedDriver_TurnOff(0);
+	LedDriver_TurnOff(17);
+	LedDriver_TurnOff(3141);
+
+	CHECK_EQUAL(0xffff, virtualLeds);
+}
+
 TEST(LedDriver, OutOfBoundsChangesNothing)
 {
 	LedDriver_TurnOn(-1);

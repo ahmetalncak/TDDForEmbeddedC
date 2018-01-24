@@ -29,12 +29,22 @@ void LedDriver_Destroy(void)
 
 void LedDriver_TurnOn(int ledNumber)
 {
+	if ((ledNumber <= 0) || (ledNumber > 16))
+	{
+		return;
+	}
+
 	ledsImage |= convertLedNumberToBit(ledNumber);
 	updateHW();
 }
 
 void LedDriver_TurnOff(int ledNumber)
 {
+	if ((ledNumber <= 0) || (ledNumber > 16))
+	{
+		return;
+	}
+
 	ledsImage &= ~(convertLedNumberToBit(ledNumber));
 	updateHW();
 }

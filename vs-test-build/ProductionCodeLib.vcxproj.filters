@@ -9,16 +9,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Example.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\LedDriver.c">
-      <Filter>src</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\include\LedDriver.h">
+    <ClInclude Include="..\include\LedDriver\LedDriver.h">
       <Filter>inc</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\LedDriver\LedDriver.c">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

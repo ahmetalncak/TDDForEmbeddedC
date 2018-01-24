@@ -95,7 +95,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\lib\include;..\lib\include\Platforms\VisualCpp;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include\LedDriver;..\lib\include;..\lib\include\Platforms\VisualCpp;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -134,9 +134,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\LedDriverTest.cpp" />
     <ClCompile Include="..\tests\AllTests.cpp" />
-    <ClCompile Include="..\tests\ExampleTest.cpp" />
+    <ClCompile Include="..\tests\LedDriverTEST\LedDriverTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="ProductionCodeLib.vcxproj">
