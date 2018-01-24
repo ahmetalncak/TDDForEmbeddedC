@@ -47,6 +47,14 @@ TEST(LedDriver, TurnOnMultipleLeds)
 	CHECK_EQUAL(0x0180, virtualLeds);
 }
 
+TEST(LedDriver, TurnOffMultipleLeds)
+{
+	LedDriver_TurnAllOn();
+	LedDriver_TurnOff(9);
+	LedDriver_TurnOff(8);
+	CHECK_EQUAL((~0x180) & 0xffff, virtualLeds);
+}
+
 TEST(LedDriver, AllOn)
 {
 	LedDriver_TurnAllOn();
@@ -104,4 +112,31 @@ IGNORE_TEST(LedDriver, OutOfBoundsProducesRuntimeError)
 
 }
 
+TEST(LedDriver, IsOn)
+{
+	CHECK_FALSE(LedDriver_IsOn(11));
+	LedDriver_TurnOn(11);
+	CHECK_TRUE(LedDriver_IsOn(11));
+}
 
+TEST(LedDriver, OutOfBoundsLedsAreAlwaysOff)
+{
+	CHECK_TRUE(LedDriver_IsOff(0));
+	CHECK_TRUE(LedDriver_IsOff(17));
+	CHECK_FALSE(LedDriver_IsOn(0));
+	CHECK_FALSE(LedDriver_IsOn(17));
+}
+
+TEST(LedDriver, IsOff)
+{
+	CHECK_TRUE(LedDriver_IsOff(12));
+	LedDriver_TurnOn(12);
+	CHECK_FALSE(LedDriver_IsOff(12));
+}
+
+TEST(LedDriver, AllOff)
+{
+	LedDriver_TurnAllOn();
+	LedDriver_TurnAllOff();
+	CHECK_EQUAL(0, virtualLeds);
+}
