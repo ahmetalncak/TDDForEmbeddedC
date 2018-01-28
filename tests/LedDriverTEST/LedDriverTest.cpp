@@ -103,7 +103,7 @@ TEST(LedDriver, OutOfBoundsChangesNothing)
 	CHECK_EQUAL(0, virtualLeds);
 }
 
-IGNORE_TEST(LedDriver, OutOfBoundsProducesRuntimeError)
+TEST(LedDriver, OutOfBoundsProducesRuntimeError)
 {
 	LedDriver_TurnOn(-1);
 	STRCMP_EQUAL("LED Driver: out-of-bounds LED",

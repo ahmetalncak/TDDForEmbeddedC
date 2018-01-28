@@ -4,17 +4,23 @@
 enum {ALL_LEDS_ON = ~0, ALL_LEDS_OFF = ~ALL_LEDS_ON};
 enum {FIRST_LED = 1, LAST_LED = 16};
 
-static unsigned short *ledsAddress;
-static unsigned short ledsImage;
+static uint16_t *ledsAddress;
+static uint16_t ledsImage;
 
-static unsigned short convertLedNumberToBit(int ledNumber)
+static uint16_t convertLedNumberToBit(int ledNumber)
 {
 	return 1 << (--ledNumber);
 }
 
-static unsigned char isLedOutOfBounds(int ledNumber)
+static BOOL isLedOutOfBounds(int ledNumber)
 {
-	return ((ledNumber < FIRST_LED) || (ledNumber > LAST_LED));
+	if ((ledNumber < FIRST_LED) || (ledNumber > LAST_LED))
+	{
+		RUNTIME_ERROR("LED Driver: out-of-bounds LED", ledNumber);
+		return TRUE;
+	}
+
+	return FALSE;
 }
 
 static void setLedImageBit(int ledNumber)
@@ -32,7 +38,7 @@ static void updateHW(void)
 	*ledsAddress = ledsImage;
 }
 
-void LedDriver_Create(unsigned short* address)
+void LedDriver_Create(uint16_t* address)
 {
 	ledsAddress = address;
 	ledsImage = ALL_LEDS_OFF;
@@ -77,26 +83,26 @@ void LedDriver_TurnAllOff(void)
 	updateHW();
 }
 
-unsigned char LedDriver_IsOn(int ledNumber)
+BOOL LedDriver_IsOn(int ledNumber)
 {
 	if (isLedOutOfBounds(ledNumber))
 	{
-		return 0; // always behave like it is off when out off bounds
+		return FALSE; // always behave like it is off when out off bounds
 	}
 
 	if ((ledsImage & convertLedNumberToBit(ledNumber)) == 0)
 	{
-		return 0; // FALSE
+		return FALSE; // FALSE
 	}
 
-	return 1; // TRUE: means Led is on
+	return TRUE; // TRUE: means Led is on
 }
 
-unsigned char LedDriver_IsOff(int ledNumber)
+BOOL LedDriver_IsOff(int ledNumber)
 {
 	if (LedDriver_IsOn(ledNumber) == 0)
 	{
-		return 1;
+		return TRUE;
 	}
-	return 0;
+	return FALSE;
 }
