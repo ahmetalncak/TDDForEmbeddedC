@@ -5,6 +5,7 @@ extern "C"
 #include "LightScheduler.h"
 #include "LightControllerSpy.h"
 #include "FakeTimeService.h"
+#include "RandomMinute.h"
 }
 
 void setTimeTo(int day, int minuteOfDay)
@@ -209,3 +210,25 @@ TEST(LightScheduler, RejectsInvalidLightIds)
 	LONGS_EQUAL(LS_OUT_OF_BOUNDS, LightScheduler_ScheduleTurnOn(-1, MONDAY, 1000));
 	LONGS_EQUAL(LS_OUT_OF_BOUNDS, LightScheduler_ScheduleTurnOn(32, MONDAY, 1000));
 }
+
+TEST_GROUP(LightSchedulerRandomize)
+{
+	void setup(void)
+	{
+	}
+
+	void teardown(void)
+	{
+	}
+};
+
+IGNORE_TEST(LightSchedulerRandomize, TurnsOnEarly)
+{
+	FakeRandomMinute_SetFirstAndIncrement(-10, 5);
+	LightScheduler_ScheduleTurnOn(4, EVERYDAY, 600);
+	LightScheduler_Randomize(4, EVERYDAY, 600);
+	setTimeTo(MONDAY, 600);
+	LightScheduler_WakeUp();
+	checkLightState(4, LIGHT_ON);
+}
+

@@ -23,6 +23,12 @@
     <ClCompile Include="..\tests\HomeAutomtionTEST\FakeTimeService.c">
       <Filter>HomeAutomation</Filter>
     </ClCompile>
+    <ClCompile Include="..\tests\HomeAutomtionTEST\RandomMinuteTest.cpp">
+      <Filter>HomeAutomation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tests\HomeAutomtionTEST\RandomMinute.c">
+      <Filter>HomeAutomation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="inc">
@@ -49,6 +55,9 @@
       <Filter>HomeAutomation</Filter>
     </ClInclude>
     <ClInclude Include="..\tests\HomeAutomtionTEST\FakeTimeService.h">
+      <Filter>HomeAutomation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tests\HomeAutomtionTEST\RandomMinute.h">
       <Filter>HomeAutomation</Filter>
     </ClInclude>
   </ItemGroup>

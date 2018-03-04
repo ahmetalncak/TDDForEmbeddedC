@@ -137,3 +137,9 @@ void LightScheduler_ScheduleRemove(int id, Day day, int minuteOfDay)
 		}
 	}
 }
+
+void LightScheduler_Randomize(int id, Day day, int minuteOfDay)
+{
+
+}
+

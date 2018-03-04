@@ -141,6 +141,8 @@
     <ClCompile Include="..\tests\HomeAutomtionTEST\LightControllerSpy.c" />
     <ClCompile Include="..\tests\HomeAutomtionTEST\LightSchedulerTest.cpp" />
     <ClCompile Include="..\tests\HomeAutomtionTEST\LightControllerSpyTest.cpp" />
+    <ClCompile Include="..\tests\HomeAutomtionTEST\RandomMinute.c" />
+    <ClCompile Include="..\tests\HomeAutomtionTEST\RandomMinuteTest.cpp" />
     <ClCompile Include="..\tests\LedDriverTEST\LedDriverTest.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +156,7 @@
     <ClInclude Include="..\mocks\RuntimeErrorStub.h" />
     <ClInclude Include="..\tests\HomeAutomtionTEST\FakeTimeService.h" />
     <ClInclude Include="..\tests\HomeAutomtionTEST\LightControllerSpy.h" />
+    <ClInclude Include="..\tests\HomeAutomtionTEST\RandomMinute.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
