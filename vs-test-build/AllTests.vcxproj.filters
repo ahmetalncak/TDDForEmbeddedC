@@ -3,15 +3,45 @@
   <ItemGroup>
     <ClCompile Include="..\tests\AllTests.cpp" />
     <ClCompile Include="..\tests\LedDriverTEST\LedDriverTest.cpp">
-      <Filter>src</Filter>
+      <Filter>LedDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mocks\RuntimeErrorStub.c">
+      <Filter>Mocks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tests\HomeAutomtionTEST\LightSchedulerTest.cpp">
+      <Filter>HomeAutomation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tests\HomeAutomtionTEST\LightControllerSpyTest.cpp">
+      <Filter>HomeAutomation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tests\HomeAutomtionTEST\LightControllerSpy.c">
+      <Filter>HomeAutomation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tests\HomeAutomtionTEST\FakeTimeServiceTest.cpp">
+      <Filter>HomeAutomation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tests\HomeAutomtionTEST\FakeTimeService.c">
+      <Filter>HomeAutomation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tests\HomeAutomtionTEST\RandomMinuteTest.cpp">
+      <Filter>HomeAutomation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tests\HomeAutomtionTEST\RandomMinute.c">
+      <Filter>HomeAutomation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="src">
-      <UniqueIdentifier>{2285f8db-156a-4019-8de2-c5d81a7f6fe4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="inc">
       <UniqueIdentifier>{757b38a7-bd62-4c05-9686-7ef5b8f24525}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HomeAutomation">
+      <UniqueIdentifier>{00a9cab9-68a0-4bd4-ad6a-1d46f0b259c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LedDriver">
+      <UniqueIdentifier>{2285f8db-156a-4019-8de2-c5d81a7f6fe4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mocks">
+      <UniqueIdentifier>{c5663e99-cad4-46ed-b018-a4640a29434f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -20,6 +50,15 @@
     </ClInclude>
     <ClInclude Include="..\mocks\RuntimeErrorStub.h">
       <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tests\HomeAutomtionTEST\LightControllerSpy.h">
+      <Filter>HomeAutomation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tests\HomeAutomtionTEST\FakeTimeService.h">
+      <Filter>HomeAutomation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tests\HomeAutomtionTEST\RandomMinute.h">
+      <Filter>HomeAutomation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

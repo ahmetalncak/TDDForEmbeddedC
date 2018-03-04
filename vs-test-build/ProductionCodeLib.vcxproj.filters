@@ -1,30 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="src">
-      <UniqueIdentifier>{1866b2d9-6a84-4a13-a0fd-3be0c0c5ed10}</UniqueIdentifier>
-    </Filter>
     <Filter Include="inc">
       <UniqueIdentifier>{a964fe40-1500-4caa-8e8f-7a93616c7578}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HomeAutomation">
+      <UniqueIdentifier>{27e7f205-a5fa-4825-b8f1-4a2bbc7e11e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LedDriver">
+      <UniqueIdentifier>{1866b2d9-6a84-4a13-a0fd-3be0c0c5ed10}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\LedDriver\LedDriver.h">
       <Filter>inc</Filter>
     </ClInclude>
-    <ClInclude Include="..\mocks\RuntimeErrorStub.h">
+    <ClInclude Include="..\include\HomeAutomation\LightController.h">
       <Filter>inc</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\util\RuntimeError.h">
+    <ClInclude Include="..\include\HomeAutomation\TimeService.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\HomeAutomation\LightScheduler.h">
       <Filter>inc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\LedDriver\LedDriver.c">
-      <Filter>src</Filter>
+      <Filter>LedDriver</Filter>
     </ClCompile>
-    <ClCompile Include="..\mocks\RuntimeErrorStub.c">
-      <Filter>src</Filter>
+    <ClCompile Include="..\src\HomeAutomation\LightScheduler.c">
+      <Filter>HomeAutomation</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

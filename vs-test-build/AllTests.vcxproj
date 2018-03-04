@@ -95,7 +95,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\mocks;..\include\LedDriver;..\lib\include;..\lib\include\Platforms\VisualCpp;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\mocks;..\include\HomeAutomation;..\include\LedDriver;..\lib\include;..\lib\include\Platforms\VisualCpp;..\include\util;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -134,7 +134,15 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\mocks\RuntimeErrorStub.c" />
     <ClCompile Include="..\tests\AllTests.cpp" />
+    <ClCompile Include="..\tests\HomeAutomtionTEST\FakeTimeService.c" />
+    <ClCompile Include="..\tests\HomeAutomtionTEST\FakeTimeServiceTest.cpp" />
+    <ClCompile Include="..\tests\HomeAutomtionTEST\LightControllerSpy.c" />
+    <ClCompile Include="..\tests\HomeAutomtionTEST\LightSchedulerTest.cpp" />
+    <ClCompile Include="..\tests\HomeAutomtionTEST\LightControllerSpyTest.cpp" />
+    <ClCompile Include="..\tests\HomeAutomtionTEST\RandomMinute.c" />
+    <ClCompile Include="..\tests\HomeAutomtionTEST\RandomMinuteTest.cpp" />
     <ClCompile Include="..\tests\LedDriverTEST\LedDriverTest.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +154,9 @@
   <ItemGroup>
     <ClInclude Include="..\include\LedDriver\LedDriver.h" />
     <ClInclude Include="..\mocks\RuntimeErrorStub.h" />
+    <ClInclude Include="..\tests\HomeAutomtionTEST\FakeTimeService.h" />
+    <ClInclude Include="..\tests\HomeAutomtionTEST\LightControllerSpy.h" />
+    <ClInclude Include="..\tests\HomeAutomtionTEST\RandomMinute.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
